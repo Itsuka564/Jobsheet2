@@ -1,3 +1,5 @@
+const numbers = [5, 3, 8, 1];
+
 function bubbleSort(numbers) {
     const arr = [...numbers];
     for (let i = 0; i < arr.length - 1; i++) {
@@ -9,6 +11,15 @@ function bubbleSort(numbers) {
     }
     return arr;
 }
+
+console.log(bubbleSort(numbers));
+
+const dataProduk = [
+    { title: "Mouse Gaming", price: 50, rating: 4.5 },
+    { title: "Laptop ROG", price: 1500, rating: 4.8 },
+    { title: "Keyboard Mechanical", price: 100, rating: 4.7 },
+    { title: "MacBook Air", price: 1200, rating: 4.9 }
+];
 
 function sortProducts(products, sortBy) {
     const arr = [...products];
@@ -25,3 +36,7 @@ function sortProducts(products, sortBy) {
     
     return arr;
 }
+
+console.log(sortProducts(dataProduk, "price-desc"));
+console.log(sortProducts(dataProduk, "rating"));
+console.log(sortProducts(dataProduk, "title"));
