@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Explorer</title>
+
+    <style>
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        .product-card img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product Explorer</h1>
+
+    <div id="product-list"></div>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                title: "Laptop",
+                price: 1200,
+                category: "laptops",
+                rating: 4.5,
+                stock: 10,
+                thumbnail: "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
+            },
+            {
+                id: 2,
+                title: "Smartphone",
+                price: 800,
+                category: "smartphones",
+                rating: 4.2,
+                stock: 15,
+                thumbnail: "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
+            },
+            {
+                id: 3,
+                title: "Headphones",
+                price: 100,
+                category: "audio",
+                rating: 4.1,
+                stock: 20,
+                thumbnail: "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg"
+            },
+            {
+                id: 4,
+                title: "Mens Shoes",
+                price: 150,
+                category: "mens-shoes",
+                rating: 4.3,
+                stock: 8,
+                thumbnail: "https://cdn.dummyjson.com/product-images/4/thumbnail.jpg"
+            },
+            {
+                id: 5,
+                title: "Perfume",
+                price: 50,
+                category: "fragrances",
+                rating: 4.0,
+                stock: 25,
+                thumbnail: "https://cdn.dummyjson.com/product-images/5/thumbnail.jpg"
+            }
+        ];
+
+        function renderProducts(products) {
+            const container = document.querySelector("#product-list");
+
+            container.innerHTML = "";
+
+            for (const product of products) {
+                const card = document.createElement("div");
+
+                card.classList.add("product-card");
+
+                card.innerHTML = `
+                    <img src="${product.thumbnail}" alt="${product.title}">
+                    <h3>${product.title}</h3>
+                    <p>${product.category}</p>
+                    <p>Harga: $${product.price}</p>
+                    <p>Rating: ${product.rating}</p>
+                    <p>Stock: ${product.stock}</p>
+                `;
+
+                container.append(card);
+            }
+        }
+
+        renderProducts(products);
+    </script>
+
+</body>
+</html>
